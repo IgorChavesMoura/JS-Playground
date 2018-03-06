@@ -1,0 +1,22 @@
+﻿<canvas id="tela" width="1280" height="800"></canvas>
+<script>
+var tela = document.getElementById("tela");
+var paint = tela.getContext("2d")
+function circulo(x,y,color){
+	paint.fillStyle=color;
+	paint.beginPath();
+	paint.arc(x, y, 2, 0, 2*Math.PI);
+	paint.fill();
+}
+function funçaomat(x){
+	return Math.sin(x/20)*100 + 200;
+}
+function desenhaGrafico(funçaomat){
+	for (var x = 0; x <= 600; x++){	
+		var y = funçaomat(x);
+		console.log("x:" + x + " y:" + y);
+		circulo(x,800 - y,"black");	
+	}
+}
+desenhaGrafico(funçaomat);
+</script>

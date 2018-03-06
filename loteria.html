@@ -1,0 +1,27 @@
+﻿<input type="text" id="numero" />
+<input type="submit" id="adivinhar" value="Comparar" />
+<script>
+var segredos = [1, 31, 28, 33, 54, 45];
+var caixaDoNumero = document.getElementById("numero");
+var botaoadv = document.getElementById("adivinhar");
+function clickBotao() {
+	if(caixaDoNumero.value > 60){
+		alert("Este número é maior que 60!");
+	} else {
+	
+		if(isNaN(caixaDoNumero.value)){
+			alert("Apenas números são válidos!");
+		} else {
+			for(var i = 0; i < segredos.length; i++){
+				if(segredos[i] == caixaDoNumero.value){
+					alert("Você acertou um dos números");
+					return;
+				}	
+			}
+				alert("Você errou");
+		}
+	}
+}
+
+botaoadv.onclick = clickBotao;
+</script>

@@ -1,0 +1,48 @@
+﻿<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var paint = tela.getContext("2d");
+var x = 1;
+var y = 1;
+var z = 1;
+var w = 1;
+paint.strokeStyle="blue"
+paint.strokeRect(0, 0, 600, 400);
+
+function circulo(x,y,raio,color){
+	paint.fillStyle=color;
+	paint.beginPath();
+	paint.arc(x, y, raio, 0, 2*Math.PI);
+	paint.fill();
+}
+function clearScreen() {
+	paint.clearRect(0, 0, 600, 400);
+}
+function draw1(){
+	//clearScreen();
+	circulo(x+300,200,x/2,"blue");
+	x++;
+	console.log(x);
+}
+function draw2(){
+	circulo(z+300,200,x/2,"red");
+	z--;
+	console.log(z);
+}
+function draw3(){
+	circulo(301.25,y+200,x/2,"green");
+	y++;
+	console.log(y);
+}
+function draw4(){
+	circulo(301.25,w+200,x/2,"yellow");
+	w--;
+	console.log(w);
+}
+setInterval(draw1, 30);
+setInterval(draw2, 30);
+setInterval(draw3, 30);
+setInterval(draw4, 30);
+
+</script>

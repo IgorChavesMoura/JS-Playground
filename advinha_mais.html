@@ -1,0 +1,27 @@
+﻿<input type="number" id="numero"/>
+<input type="submit" value="Comparar"
+id="adivinhar"/>
+<script>
+alert("Adivinhe o número que pensei! (Entre 0 e 10)");
+var caixadonumero = document.getElementById("numero");
+var segredo = Math.round(Math.random*10);
+var botaoadv = document.getElementById("adivinhar");
+function clickbotao(){
+	if(isNaN(caixadonumero.value)){
+		alert("Apenas números são válidos!");
+	} else {
+		if(caixadonumero.value > 10){
+			alert("Este número é maior que 10!");
+		} else {
+			if(segredo == caixadonumero.value){
+			alert("Você acertou!");
+			} else {
+			alert("Você errou");
+			}
+		} 
+	}
+	caixadonumero.value = "";
+}
+botaoadv.onclick = clickbotao;
+
+</script>

@@ -1,0 +1,16 @@
+﻿<script>
+function pulalinha(){
+	document.write("<br>");
+}
+function mostra(frase){
+	document.write(frase);
+	pulalinha();
+}
+var anodecopa = prompt("Informe o ano inicial");
+var anoatual = prompt("Em que ano você está?");
+while(anodecopa <= anoatual) {
+	mostra(anodecopa + " tem copa!");
+	anodecopa = parseInt(anodecopa) + 4;
+	//	mostra(anodecopa + " esse é o valor após a soma!")
+}
+</script>

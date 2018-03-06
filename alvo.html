@@ -1,0 +1,58 @@
+﻿<canvas id="tela" width="1280" height="720"></canvas>
+<script>
+//paint.fillStyle="blue";
+//paint.fillRect(0, 0, 1280, 720);
+var tela = document.getElementById("tela");
+var paint = tela.getContext("2d");
+var raio = 40
+var alvoX;
+var alvoY;
+function cor(color){
+	paint.fillStyle = color;
+}
+function circulo(x,y,raio){
+	paint.beginPath();
+	paint.arc(x, y, raio, 0, 2*Math.PI);
+	paint.fill();
+}
+function drawTarget(x, y){
+	cor("red");
+	circulo(x, y, raio);
+	cor("white");
+	circulo(x, y, raio-10);
+	cor("red");
+	circulo(x, y, raio-20);
+	cor("white");
+	circulo(x, y, raio-30);
+}
+function sorteia(n){
+	var sorteado = Math.round(Math.random()*n);
+	return sorteado;
+	console.log(sorteado);
+}
+function clearScreen(){
+	paint.clearRect(0, 0, 1280, 720);
+}
+function click(event){
+	
+	
+}
+
+
+function draw(){
+	clearScreen();
+	alvoX = sorteia(1280);
+	alvoY = sorteia(720);
+	drawTarget(alvoX, alvoY);
+	var x = event.pageX;
+	var y = event.pageY;
+	console.log(x, y)
+	if(x - alvoX > 40 && y - alvoY > 40){
+		console.log("Acertou!")}
+}
+//setInterval(draw, 1000);
+
+tela.onclick = draw;
+
+//drawTarget(640, 360);
+</script>

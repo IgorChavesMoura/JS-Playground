@@ -1,0 +1,24 @@
+﻿<h3>Álcool ou Gasolina?</h3>
+<script>
+var distanciapercorridacomgasolina = 480 
+var distanciapercorridacomalcool = 300
+var tanque = 40 
+var consumodegasolina = Math.round(distanciapercorridacomgasolina/tanque)
+var comsumodealccol = Math.round(distanciapercorridacomalcool/tanque)
+var preçodagasolina = 2.90
+var preçodoalcool = 2.40
+var preçoporkilometrogasolina =(preçodagasolina/consumodegasolina).toFixed(2)
+var preçoporkilometroalcool = (preçodoalcool/comsumodealccol).toFixed (2)
+document.write("O consumo de álcool é:")
+document.write(comsumodealccol)
+document.write("km/L(de álcool)" + "<br>")
+document.write("O consumo de gasolina é:")
+document.write(consumodegasolina)
+document.write("km/L(de gasolina)" + "<br>")
+document.write("O preço por kilometro da gasolina é:")
+document.write(preçoporkilometrogasolina)
+document.write("R$/L(de gasolina)" + "<br>")
+document.write("O preço por kilometro do alcool é:")
+document.write(preçoporkilometroalcool)
+document.write("R$/L(de ácool)" + "<br>")
+</script>

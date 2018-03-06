@@ -1,0 +1,83 @@
+﻿<canvas id="tela" width="600" height="600" ></canvas>
+<input type="submit" value="Desenhar1" id="desenha1" />
+<input type="submit" value="Desenhar2" id="desenha2" />
+<script>
+var tela = document.getElementById("tela");
+var paint = tela.getContext("2d");
+var linha = 1;	
+var coluna = 1;
+var raio = 10;
+var max =30;
+/*
+function quadrado(x,y,color) {
+	
+	
+	paint.fillStyle=color;
+	paint.strokeStyle="black";
+	paint.fillRect(x, y, 50, 50);
+	paint.strokeRect(x, y, 50, 50);
+}
+//function quadradoVermelho(x,y){
+	
+	
+	//paint.fillStyle="red";
+	//paint.strokeStyle="black";
+	//paint.fillRect(x, y, 50, 50);
+	//paint.strokeRect(x, y, 50, 50);
+//}
+
+
+function desenha1() {
+	for(var x = 0; x < 600; x = x + 50) {
+		quadrado(x,0,"green");
+		quadrado(x,50,"red");
+		
+	}
+}
+*/
+
+
+function circulo(x, y, color){
+	
+	
+	paint.fillStyle=color
+	paint.strokeStyle="black"
+	paint.beginPath();
+	paint.arc(raio+ (x*raio*2), raio+ (y*raio*2), raio, 0, 2*Math.PI);
+	paint.fill();
+	//paint.stroke();
+}
+
+function desenha2(){
+
+
+	linha = 1;	
+	coluna = 1;
+	raio = 10;
+	max =30;
+
+	for(var y = 1; y < max; y ++){
+		for(var x = 1; x < max; x ++){
+		
+			circulo(x, y, "black");
+		
+			//document.write("x: " + x + " |y: " + y + "<br>") ;
+		
+			if(x == linha && y == coluna){
+				circulo(coluna, linha, "red");
+				
+				if (y < max/2){
+					linha ++;
+				} else {
+					linha --;
+				}
+				coluna ++;
+			} 
+		}
+	}
+}
+var botaoDesenha1 = document.getElementById("desenha1");
+botaoDesenha1.onclick = desenha1;
+var botaoDesenha2 = document.getElementById("desenha2");
+botaoDesenha2.onclick = desenha2;
+</script>

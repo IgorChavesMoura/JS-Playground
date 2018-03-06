@@ -1,0 +1,57 @@
+﻿<canvas id="tela" width="600" height="400"></canvas>
+<input type="submit" value="black" id="black" />
+<input type="submit" value="green" id="green" />
+<input type="submit" value="blue" id="blue" />
+<script>
+var tela = document.getElementById("tela");
+var paint = tela.getContext("2d");
+var color
+var botaoBlack = document.getElementById("black");
+var botaoGreen = document.getElementById("green");
+var botaoBlue = document.getElementById("blue");
+paint.fillStyle="gray";
+paint.fillRect(0, 0, 600, 400);
+function colorBlack(){
+	color = "black";
+}
+function colorGreen(){
+	color = "green";
+}
+function colorBlue(){
+	color = "blue";
+}
+function circulo(x,y,color){
+	paint.fillStyle=color;
+	paint.beginPath();
+	paint.arc(x, y, 10, 0, 2*Math.PI);
+	paint.fill();
+}
+function clica(event){
+	var x = event.pageX - tela.offsetLeft;
+	var y = event.pageY - tela.offsetTop;
+	circulo(x,y,color);
+	console.log("X:" + x + " Y:" + y);
+}
+function testeMouse(event){
+	var x = event.pageX - tela.offsetLeft;
+	var y = event.pageY - tela.offsetTop;
+	console.log("X:" + x + " Y:" + y);
+	if(event.which == 1){
+		circulo(x,y,color);
+		console.log("left");
+	}
+	if(event.which == 2){
+		circulo(x,y,"blue");
+		console.log("mid");
+	}
+	if(event.which == 3){
+		circulo(x,y,"green");
+		console.log("right");
+	}
+}
+botaoBlack.onclick = colorBlack;
+botaoGreen.onclick = colorGreen;
+botaoBlue.onclick = colorBlue;
+tela.onclick = testeMouse;
+tela.onmousemove = clica;
+</script>

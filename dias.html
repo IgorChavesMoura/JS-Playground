@@ -1,0 +1,28 @@
+﻿<script>
+function pulalinha(){
+	document.write("<br>");
+}
+function mostra(frase){
+	document.write(frase);
+	pulalinha();
+}
+
+function calculadias (idade) {
+	var dias = idade*365;
+	return dias
+}
+function calculabatimentos (dias){
+	var batimentos = dias*24*60*80;
+	return batimentos;
+}
+var idade = prompt("Qual sua idade?")
+var dias = calculadias(idade)
+var batimentos = calculabatimentos(dias)
+var diasebatimentos = calculabatimentos(calculadias(idade))
+
+mostra(diasebatimentos)
+</script>
+
+
+
+

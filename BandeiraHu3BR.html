@@ -1,0 +1,35 @@
+﻿<canvas id="tela" width="600" height="400" ></canvas>
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+c.fillStyle="darkGreen";
+c.fillRect(0, 0, 600, 400);
+c.fillStyle="yellow"
+c.beginPath();
+c.moveTo(300, 50);
+c.lineTo(575, 200);
+c.lineTo(300, 350);
+c.lineTo(25, 200);
+c.fill();
+c.fillStyle="darkBlue";
+c.beginPath();
+c.arc(300, 200, 100, 3.14-0.5, 2*3.14-0.5);
+c.fill();
+c.fill();
+//c.strokeStyle="white"
+//c.lineWidth = 15;
+//c.beginPath();
+//c.moveTo(200,175);
+//c.bezierCurveTo(250, 170, 300, 170, 401, 200);
+//c.stroke();
+c.fillStyle="darkBlue";
+c.beginPath();
+c.arc(300, 200, 100, 0.5, 3.14+0.5);
+c.fill();
+c.fillStyle="white";
+c.strokeStyle="black";
+c.beginPath();
+c.arc(319, 150, 10, 0, 2*Math.PI);
+c.fill();
+c.stroke();
+</script>

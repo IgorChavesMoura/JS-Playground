@@ -1,0 +1,27 @@
+﻿<script>
+var numeropensado = Math.round(Math.random()*10);
+var numerodatentativa = 1;
+while(chute != numeropensado){
+	var chute = parseInt(prompt("Qual número você acha que pensei?(Entre 0 e 10)"));
+	numerodatentativa++;
+	if (isNaN(chute)){
+		alert("Isso não é um número!");
+	}
+	if (chute>10){
+		alert("Este número ultrapassa o intervalo!");
+	} else {
+	if(chute == numeropensado){
+		alert("Parabéns, você acertou!!!")
+		//break;
+	} else {
+		if(chute > numeropensado){
+			alert("Este número é maior! Será que ainda restam tentativas?");
+		}
+		if(chute < numeropensado){
+			alert("Este número é menor! Será que ainda restam tentativas?");
+		}
+	}
+}
+	numerodatentativa++;
+}
+</script>

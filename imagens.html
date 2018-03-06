@@ -1,0 +1,25 @@
+﻿<canvas id="tela" width="1920" height="1080"></canvas>
+<script>
+var tela = document.getElementById("tela");
+var paint = tela.getContext("2d");
+var imagem = new Image();
+imagem.src = "http://www.decaldoctorz.com/shop/images/decals/skulls-evil_with_bones_skull.jpg";
+var x = 1;
+
+
+paint.strokeStyle="black"
+paint.strokeRect(0, 0, 1920, 1080);
+
+function drawPicture(x, y){
+	paint.drawImage(imagem, x, y);
+}
+function clearScreen(){
+	paint.clearRect(0, 0, 1920, 1080);
+}
+function animatePicture(){
+	drawPicture(x, x);
+	x++;
+	//clearScreen();
+}
+setInterval(animatePicture, 30);
+</script>

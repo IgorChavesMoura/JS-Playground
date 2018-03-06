@@ -1,0 +1,13 @@
+﻿<script>
+function mostra(frase){
+	document.write(frase + "<br>");
+}
+var numero = prompt("Qual o número que você deseja para a tabuada");
+if(numero>10){
+	mostra("Esse número é maior que 10!")
+} else {	
+	for(var multiplicador = 1; multiplicador <= 10; multiplicador++){
+		mostra(multiplicador*numero);
+	}
+}
+</script>

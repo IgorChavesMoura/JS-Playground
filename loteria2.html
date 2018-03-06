@@ -1,0 +1,27 @@
+﻿<input type="text" id="numero" />
+<input type="submit" value="Adicionar" id="Adicionar" />
+<input type="submit" value="Comparar" id="Comparar" />
+<input type="submit" value="Sortear" id="Sortear" />
+<script>
+var sorteados = [];
+var escolhidos = [];
+
+function sorteia() {
+	for(var i = 0; i < 7; i++){
+		sorteados.push(Math.round(Math.random()*60));
+		console.log(sorteados);
+	}
+}
+function adicionar(){
+	var numero = document.getElementById("numero");
+	for(var l = 0; l < 7; l++){
+		escolhidos.push(numero);
+		console.log(escolhidos);
+	}
+}
+function comparar() {
+	}
+var botaoAdc = document.getElementById("Adicionar");
+var botaoSort = document.getElementById("Sortear");
+botaoAdc.onclick = adicionar;
+botaoSort.onclick = sorteia;

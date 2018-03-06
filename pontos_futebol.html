@@ -1,0 +1,38 @@
+﻿<script>
+function pulalinha(){
+	document.write("<br>");
+}
+function mostra(frase){
+	document.write(frase);
+	pulalinha();
+}
+function calculapontos(vitorias,empates){
+	return (vitorias*3) + empates;
+}
+
+
+var vitoria = parseInt(prompt("Quantos jogos seu time venceu?"));
+var empates = parseInt(prompt("Quantos jogos seu time empatou?"));
+var pontos //= (vitoria*3 + empates)
+
+mostra("Seu time fez " + pontos + " pontos!")
+
+var vitoriaadversaio = parseInt(prompt("Quantos jogos o adversário venceu?"));
+var empatesadversario = parseInt(prompt("Quantos jogos o adversário empatou?"));
+var pontosadversario //= (vitoriaadversaio*3 + empatesadversario)
+ 
+mostra(calculapontos(vitoria,empates));
+mostra(calculapontos(vitoriaadversaio,empatesadversario));
+
+if(pontos>pontosadversario){
+	mostra("Seu time venceu o adversario!");
+}
+if (pontos==pontosadversario){
+	mostra("Seu time empatou com o adversario!");
+}
+if (pontos<pontosadversario){
+	mostra("Seu time perdeu para o adversario!");
+}
+</script>
+
+

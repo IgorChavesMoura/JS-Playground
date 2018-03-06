@@ -1,0 +1,35 @@
+﻿<script>
+function pulalinha(){
+	document.write("<br>");
+}
+function mostra(frase){
+	document.write(frase);
+	pulalinha();
+}
+function sorteia(n){
+	var numerosorteado =(Math.round(Math.random()*n));
+	return numerosorteado
+}
+var numeropensado =  sorteia(10) //Math.round(Math.random()*10);
+//mostra(numeropensado);
+var chute = prompt("Já pensei! Qual número você acha que é? (Entre 0 e 10)");
+
+if (isNaN(chute)){
+	mostra("Apenas números são válidos");
+}
+if (chute>10){
+	mostra("Este número não está entre 0 e 10!");
+}
+if (chute<=10){
+	if(chute == numeropensado){
+		mostra("Na mosca, você acertou, pois pensei no " + numeropensado);
+	} else {
+		if(chute>numeropensado){
+			mostra("Você errou,este número é maior, eu pensei no " + numeropensado);
+		}
+		if(chute<numeropensado){
+			mostra("Você errou este número é menor, eu pensei no " + numeropensado);
+		}
+	}
+}
+</script>
